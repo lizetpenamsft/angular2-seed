@@ -1,4 +1,4 @@
-## angular2-seed
+## angular2-seed with ADAL
 
 A simple starter project showing how to use [ADAL](https://github.com/AzureAD/azure-activedirectory-library-for-js/) with Angular2
 
