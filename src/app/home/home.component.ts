@@ -1,3 +1,4 @@
+import { AdalService } from './../services/adal.service';
 import {Component} from '@angular/core';
 
 @Component({
@@ -6,4 +7,10 @@ import {Component} from '@angular/core';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
+  constructor(private adalService: AdalService){
+    console.log('User info from JWT');
+    console.log(this.adalService.userInfo);
+    console.log('JWT Token');
+    console.log(this.adalService.accessToken);
+  }
 }
