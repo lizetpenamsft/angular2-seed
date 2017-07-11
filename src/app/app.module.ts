@@ -1,8 +1,6 @@
-import { OAuthCallbackHandler } from './login-callback/oauth-callback.guard';
-import { OAuthCallbackComponent } from './login-callback/oauth-callback.component';
-import { OAuthHandshakeModule } from './login-callback/oauth-callback.module';
-import { SharedServicesModule } from './services/shared.services.module';
-import { NgModule } from '@angular/core'
+import { ValueService } from './services/value.service';
+import { ValueComponent } from './values/value.controller';
+import { NgModule, APP_INITIALIZER } from '@angular/core'
 import { RouterModule } from '@angular/router';
 import { rootRouterConfig } from './app.routes';
 import { AppComponent } from './app.component';
@@ -19,6 +17,12 @@ import { RepoDetailComponent } from './github/repo-detail/repo-detail.component'
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
+import { BaseEndpoint } from './app.constants';
+import { OAuthCallbackHandler } from './login-callback/oauth-callback.guard';
+import { OAuthCallbackComponent } from './login-callback/oauth-callback.component';
+import { OAuthHandshakeModule } from './login-callback/oauth-callback.module';
+import { SharedServicesModule } from './services/shared.services.module';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { LoginComponent } from './login/login.component';
     RepoDetailComponent,
     HomeComponent,
     ContactComponent,
-    LoginComponent    
+    LoginComponent,
+    ValueComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +46,23 @@ import { LoginComponent } from './login/login.component';
     RouterModule.forRoot(rootRouterConfig, { useHash: true })
   ],
   providers: [
-    GithubService    
+    GithubService,
+    /*
+    {
+      provide: APP_INITIALIZER,     
+      useFactory: () => {
+        // any app initialize code
+      },
+      
+      deps: [],
+      multi: true
+    },
+    */
+    { provide: BaseEndpoint, useValue: 'http://localhost:52233' }, // for asp.net core backend
+    //{ provide: BaseEndpoint, useValue: 'http://localhost:64897'}, // use asp.net mvc 5 backend
+    ValueService
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 

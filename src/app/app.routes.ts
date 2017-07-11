@@ -1,3 +1,5 @@
+import { ValueComponent } from './values/value.controller';
+import { Component } from '@angular/core';
 
 import { Routes } from '@angular/router';
 
@@ -18,6 +20,7 @@ export const rootRouterConfig: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'id_token', component: OAuthCallbackComponent, canActivate: [OAuthCallbackHandler] },
+  { path: 'values', component: ValueComponent, canActivate: [AuthenticationGuard] },
   {
     path: 'github', component: RepoBrowserComponent, canActivate: [AuthenticationGuard],
     children: [

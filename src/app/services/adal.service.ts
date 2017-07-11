@@ -8,7 +8,7 @@ export class AdalService {
 
     private context: adal.AuthenticationContext;
     constructor(private configService: ConfigService) {
-        this.context = new createAuthContextFn(configService.getAdalConfig);
+        this.context = new createAuthContextFn(configService.AdalConfig);
     }
 
     login() {
@@ -28,7 +28,7 @@ export class AdalService {
     }
 
     public get accessToken() {
-        return this.context.getCachedToken(this.configService.getAdalConfig.clientId);
+        return this.context.getCachedToken(this.configService.AdalConfig.clientId);
     }
 
     public get isAuthenticated() {

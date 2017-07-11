@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
     constructor() {
     }
-    public get getAdalConfig(): any {
+    public get AdalConfig(): any {
         return {
-            tenant: 'Your Tenant ID',
-            clientId: 'Your Client ID',
+            tenant: 'ENTER YOUR TENANT ID',
+            clientId: 'ENTER YOUR CLIENT ID',
             redirectUri: window.location.origin + '/',
             postLogoutRedirectUri: window.location.origin + '/'
         };
