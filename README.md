@@ -14,4 +14,5 @@ A simple starter project showing how to use [ADAL](https://github.com/AzureAD/az
 - run `npm start` to fire up dev server
 - open browser to [`http://localhost:5000`](http://localhost:5000)
 - if you want to use other port, open `package.json` file, then change port in `--port 5000` script
-
+### Backend WebAPI Services
+In order to see this demo in full, you must run the [backend service](https://github.com/vsaroopchand/angular2-seed-server) paired with this project.
