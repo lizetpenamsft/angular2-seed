@@ -1,3 +1,4 @@
+import { AdalService } from './services/adal.service';
 import {Component} from '@angular/core';
 
 @Component({
@@ -5,4 +6,7 @@ import {Component} from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
+  constructor(private adalService: AdalService){
+
+  }
 }

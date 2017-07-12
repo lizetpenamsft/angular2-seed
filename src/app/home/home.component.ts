@@ -13,4 +13,12 @@ export class HomeComponent {
     console.log('JWT Token');
     console.log(this.adalService.accessToken);
   }
+
+   logout() {
+        this.adalService.logout();
+    }
+
+    public get isLoggedIn() {
+        return this.adalService.isAuthenticated;
+    }
 }

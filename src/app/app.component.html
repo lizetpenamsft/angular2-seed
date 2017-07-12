@@ -1,33 +1,36 @@
 <h3>
-  Angular 2 Seed
+  Angular/Adal.js Seed
 </h3>
-<nav>
-	<a [routerLink]="['/']">
+
+<nav id="unsecured-nav" *ngIf="!adalService.userInfo">
+  <a [routerLink]="['/']">
     Login
-  </a>
+  </a> 
   |
-  <a [routerLink]="['/home']">
-    Home
-  </a>
-  |
-	<a [routerLink]="['/about']">
+  <a [routerLink]="['/about']">
     About
-  </a>
+  </a> 
   |
-	<a [routerLink]="['/github', 'angular']">
-    Github Repos
-  </a>
-  |
-	<a [routerLink]="['/contact']">
+  <a [routerLink]="['/contact']">
     Contact Us
   </a>
 </nav>
 
+<nav id="secured-nav" *ngIf="adalService.userInfo">
+  <a [routerLink]="['/home']">
+    Home
+  </a> 
+  |
+  <a [routerLink]="['/values']">
+    Values API
+  </a>
+</nav>
+
 <main>
-	<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </main>
 
-
+<br />
 <footer>
   © 2016
 </footer>

@@ -1,2 +1,7 @@
 <h3>Home Component</h3>
-<p>Welcome to Angular Seed</p>
+<h2>Welcome {{adalService.userInfo.userName}}!</h2>
+
+<div *ngIf="isLoggedIn">
+    <button (click)="logout()">Logout</button>
+</div>
+<br>
