@@ -10,7 +10,8 @@
   },
   "contributors": [
     "Rob Wormald <robwormald@gmail.com>",
-    "PatrickJS <github@gdi2290.com>"
+    "PatrickJS <github@gdi2290.com>",
+    "Lizet Pena De Sola <lizet@theniceweb.com>"
   ],
   "license": "MIT",
   "dependencies": {
@@ -31,6 +32,7 @@
     "core-js": "^2.4.1",
     "expose-loader": "^0.7.3",
     "ie-shim": "^0.1.0",
+    "npm": "^5.8.0",
     "reflect-metadata": "^0.1.3",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "~0.6.26"
@@ -46,6 +48,7 @@
     "to-string-loader": "^1.1.4",
     "typescript": "~2.0.10",
     "webpack": "2.1.0-beta.27",
+    "webpack-cli": "^2.0.13",
     "webpack-dev-server": "2.1.0-beta.11",
     "webpack-merge": "^0.15.0"
   },
@@ -57,10 +60,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/angular/angular2-seed.git"
+    "url": "git+https://github.com/lizetpena/angular2-seed"
   },
   "bugs": {
-    "url": "https://github.com/angular/angular2-seed/issues"
+    "url": "https://github.com/lizetpena/angular2-seed/issues"
   },
-  "homepage": "https://github.com/angular/angular2-seed#readme"
+  "homepage": "https://github.com/lizetpena/angular2-seed#readme"
 }
