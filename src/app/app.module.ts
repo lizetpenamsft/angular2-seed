@@ -58,7 +58,9 @@ import { SharedServicesModule } from './services/shared.services.module';
       multi: true
     },
     */
-    { provide: BaseEndpoint, useValue: 'http://localhost:52233' }, // for asp.net core backend
+    { 
+      provide: BaseEndpoint, useValue: 'https://localhost:44335' }, // for asp.net core backend services using SSL
+      //provide: BaseEndpoint, useValue: 'http://localhost:52233' }, // for asp.net core backend
     //{ provide: BaseEndpoint, useValue: 'http://localhost:64897'}, // use asp.net mvc 5 backend
     ValueService
   ],
