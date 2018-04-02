@@ -6,7 +6,7 @@ import {Component} from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  constructor(private adalService: AdalService){
+  constructor(public adalService: AdalService){
 
   }
 }
