@@ -19,7 +19,7 @@ export class ConfigService {
 
 function DefineEndpoints() {
     return {
-        "http://localhost:5000": 
-        "https://theniceweb.onmicrosoft.com/AspNetCore_WebApi"
+        "https://localhost:44335": 
+        "https://AspNetCore_WebApi"
     };
 }
