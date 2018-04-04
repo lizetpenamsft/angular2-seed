@@ -20,7 +20,7 @@ export class BaseService<T> {
 
         this.headers = new Headers({ 'Content-Type': 'application/json' });
        
-        this.adalService.resource="https://localhost:44355";
+       
         let jwt= this.adalService.apiAccessToken;
         
         this.headers.append('Authorization', 'Bearer ' + jwt);
