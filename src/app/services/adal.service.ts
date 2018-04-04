@@ -36,6 +36,7 @@ export class AdalService {
 
     public get apiAccessToken()
     {
+       
 
         var user = this.context.getCachedUser();
         console.log(user);
@@ -49,8 +50,18 @@ export class AdalService {
         this.context.clearCache();
         this.context.clearCacheForResource(this.configService.AdalConfig.clientId);
 
-
+        var isCallback = this.context.isCallback(window.location.hash);
+        this.context.handleWindowCallback();
+        
         this.context.acquireToken(apiURI, function (error, token) {
+
+            if (error || !token) {
+                console.log("ADAL error occurred: " + error);
+                
+            }
+            console.log("got the token.. resolving tokendefer");
+            
+
             console.log(error);
             console.log(token);
             apiToken=token;
