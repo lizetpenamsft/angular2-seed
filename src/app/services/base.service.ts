@@ -10,6 +10,7 @@ import 'rxjs/add/operator/catch';
 
 import { AdalService } from './adal.service';
 import { BaseEndpoint } from './../app.constants';
+import { ConfigService } from './config.service';
 
 @Injectable()
 export class BaseService<T> {
@@ -18,7 +19,10 @@ export class BaseService<T> {
     constructor(private http: Http, @Inject(BaseEndpoint) private baseApiEndpoint, private adalService: AdalService) {
 
         this.headers = new Headers({ 'Content-Type': 'application/json' });
-        let jwt = this.adalService.accessToken;
+       
+        this.adalService.resource="https://localhost:44355";
+        let jwt= this.adalService.apiAccessToken;
+        
         this.headers.append('Authorization', 'Bearer ' + jwt);
     }
 
