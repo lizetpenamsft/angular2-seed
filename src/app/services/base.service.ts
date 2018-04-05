@@ -20,10 +20,17 @@ export class BaseService<T> {
 
         this.headers = new Headers({ 'Content-Type': 'application/json' });
        
+        this.adalService.getApiAccessToken.then((token:string) => {
+            this.headers.append('Authorization', 'Bearer ' + token);
+        }).catch((error)=>{
+            console.log(error);
+        });
        
-        let jwt= this.adalService.apiAccessToken;
+       
+        //let jwt= this.adalService.apiAccessToken;
+        //let jwt=this.adalService.getApiAccessToken;
         
-        this.headers.append('Authorization', 'Bearer ' + jwt);
+       // this.headers.append('Authorization', 'Bearer ' + jwt);
     }
 
     getAll(): Observable<any> {

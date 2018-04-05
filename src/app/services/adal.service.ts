@@ -34,6 +34,42 @@ export class AdalService {
     }
 
 
+//trying to use a promise to call the AAD to acquire new token for API
+    public get getApiAccessToken() {
+
+        var user = this.context.getCachedUser();
+        console.log(user);
+
+      
+
+        var apiURI= this.configService.endpoints["https://localhost:44335"];
+        var apiToken;
+
+        const p = new Promise<string>((resolve, reject) => {
+  
+            this.context.acquireToken(apiURI, (error, token) => {
+  
+                if (error || !token) {
+  
+                 console.log('ADAL error occurred in acquireToken: ' + error);
+  
+                reject(error);
+  
+                } else {
+  
+                resolve(token);
+  
+                }
+  
+            });
+  
+         });
+  
+        return p;
+  
+    }
+
+
     public get apiAccessToken()
     {
        
@@ -51,7 +87,16 @@ export class AdalService {
         this.context.clearCacheForResource(this.configService.AdalConfig.clientId);
 
         var isCallback = this.context.isCallback(window.location.hash);
-        this.context.handleWindowCallback();
+        
+
+
+  
+  
+  
+
+
+
+
 
         this.context.acquireToken(apiURI, function (error, token) {
 
@@ -68,7 +113,7 @@ export class AdalService {
             console.log(apiToken);
         });
 
-
+        this.context.handleWindowCallback();
        
         
 
